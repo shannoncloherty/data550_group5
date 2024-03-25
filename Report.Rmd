@@ -1,0 +1,44 @@
+---
+title: Group 5 Midterm Project Report
+author: Erika Canda, Shannon Cloherty, Alex Klimek, Tina Teng, Afia Tyus
+output: html_document
+---
+
+```{r, here-i-am, include = FALSE}
+here::i_am("Report.Rmd")
+```
+
+```{r, table1}
+table1 <- readRDS(
+  here::here("alex/output/table1.rds"))
+print(table1)
+```
+
+```{r, figure1}
+figure1 <- readRDS(
+  here::here("erika/output/figure1.rds"))
+print(figure1)
+```
+
+```{r, figure2}
+figure2 <- readRDS(
+  here::here("erika/output/figure2.rds"))
+print(figure2)
+```
+
+```{r, regression}
+regression_figure1 <- readRDS(
+  here::here("tina/output/regression_figure1.rds"))
+print(regression_figure1)
+
+regression_figure2 <- readRDS(
+  here::here("tina/output/regression_figure2.rds"))
+print(regression_figure2)
+```
+
+```{r, figure3}
+figure3 <- readRDS(
+  here::here("afia/output/figure3.rds"))
+print(figure3)
+```
+
