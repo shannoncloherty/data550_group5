@@ -2,12 +2,31 @@
 title: Group 5 Midterm Project Report
 author: Erika Canda, Shannon Cloherty, Alex Klimek, Tina Teng, Afia Tyus
 output: html_document
-investigating_var: 
-var_cutoff:
+params: 
+  var_name: "weight1"
+  var_cutoff: 10
 ---
 
 ```{r, here-i-am, include = FALSE}
 here::i_am("Report.Rmd")
+#reading in the data set
+projectdata <- read.csv(file = here::here("data/f75_interim.csv"))
+
+var_label(projectdata) <- list(
+  agemons = "Age (months)",
+  sex = "Sex assigned at birth",
+  caregiver = "Primary Caregiver",
+  bfeeding = "Current Breastfeeding Status",
+  muac = "MUAC (cms) at baseline",
+  muac1 = "MUAC (cms) at stabilization",
+  muac2 = "MUAC (cms) at discharge/death/widthdrawl",
+  arm = "Formula type"
+)
+
+#loading packages
+library(pacman)
+p_load(tidyverse, ggplot2, knitr, labelled, gtsummary, haven)
+
 ```
 
 ```{r, table1}
@@ -46,9 +65,22 @@ print(figure3)
 figure4 <- readRDS(
   here::here("afia/output/graph2.rds"))
 print(figure4)
+```
 
-params_graph <- readRDS(
-  here::here("afia/output/graph3.rds"))
+``` {r, params_figure}
+
+projectdata <- projectdata %>% 
+mutate(newvardata = case_when(projectdata[[params$var_name]] < params$var_cutoff ~ "Less than cutoff",
+                            projectdata[[params$var_name]] >= params$var_cutoff ~ "Greater than or equal to cutoff"
+))
+table(projectdata$newvardata, useNA = "always")
+
+params_graph <- projectdata %>% filter(days_stable != 999) %>% 
+  ggplot( aes(x= newvardata, y=days_stable)) +
+  geom_boxplot() + 
+  labs(title = paste("Box plot of", params$var_name, "above and below", params$var_cutoff), x = "", y = "Days to Stabilization")
+
+params_graph
 
 print(params_graph)
 ```
