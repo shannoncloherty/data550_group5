@@ -2,6 +2,8 @@
 title: Group 5 Midterm Project Report
 author: Erika Canda, Shannon Cloherty, Alex Klimek, Tina Teng, Afia Tyus
 output: html_document
+investigating_var: 
+var_cutoff:
 ---
 
 ```{r, here-i-am, include = FALSE}
@@ -38,7 +40,16 @@ print(regression_figure2)
 
 ```{r, figure3}
 figure3 <- readRDS(
-  here::here("afia/output/figure3.rds"))
+  here::here("afia/output/graph1.rds"))
 print(figure3)
+
+figure4 <- readRDS(
+  here::here("afia/output/graph2.rds"))
+print(figure4)
+
+params_graph <- readRDS(
+  here::here("afia/output/graph3.rds"))
+
+print(params_graph)
 ```
 
