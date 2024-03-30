@@ -8,7 +8,7 @@ library(ggplot2)
 df <- 
   read.csv("data/f75_interim.csv")
 
-cleaned_df <- cleaned_df %>%
+cleaned_df <- df %>%
   filter(!is.na(muac1) & !is.na(weight1) & is.finite(muac1) & is.finite(weight1))
 
 cleaned_df$arm <- as.factor(cleaned_df$arm)
