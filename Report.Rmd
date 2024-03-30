@@ -8,6 +8,10 @@ params:
 ---
 
 ```{r, here-i-am, include = FALSE}
+#loading packages
+library(pacman)
+p_load(tidyverse, ggplot2, knitr, labelled, gtsummary, haven, table1)
+
 here::i_am("Report.Rmd")
 #reading in the data set
 projectdata <- read.csv(file = here::here("data/f75_interim.csv"))
@@ -23,9 +27,7 @@ var_label(projectdata) <- list(
   arm = "Formula type"
 )
 
-#loading packages
-library(pacman)
-p_load(tidyverse, ggplot2, knitr, labelled, gtsummary, haven)
+
 
 ```
 
@@ -53,13 +55,11 @@ knitr::include_graphics(
 ```
 
 ```{r, regression}
-regression_figure1 <- readRDS(
-  here::here("tina/output/regression_figure1.rds"))
-print(regression_figure1)
-
-regression_figure2 <- readRDS(
-  here::here("tina/output/regression_figure2.rds"))
-print(regression_figure2)
+knitr::include_graphics(
+  here::here("tina/output/reg_plot1.png"))
+  
+knitr::include_graphics(
+  here::here("tina/output/reg_plot2.png"))
 ```
 
 ```{r, figure3}
