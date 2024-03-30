@@ -17,7 +17,7 @@ library(pacman)
 p_load(tidyverse, ggplot2, knitr, labelled, gtsummary)
 
 
-here::i_am("afia/code/00_v1.R")
+here::i_am("afia/code/01_breastfeeding_table.R")
 projectdata <- read.csv(file = here::here("data/f75_interim.csv"))
 
 var_label(projectdata) <- list(
