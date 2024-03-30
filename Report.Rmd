@@ -31,20 +31,25 @@ p_load(tidyverse, ggplot2, knitr, labelled, gtsummary, haven)
 
 ```{r, table1}
 table1 <- readRDS(
-  here::here("alex/output/table1.rds"))
+  here::here("alex/output/table_one.rds"))
 print(table1)
 ```
 
-```{r, figure1}
-figure1 <- readRDS(
-  here::here("erika/output/figure1.rds"))
-print(figure1)
+```{r, boxplots}
+knitr::include_graphics(
+  here::here("erika/output/muac_boxplot.png"))
+
+knitr::include_graphics(
+  here::here("erika/output/height_boxplot.png"))
+
+knitr::include_graphics(
+  here::here("erika/output/weight_boxplot.png"))
 ```
 
-```{r, figure2}
-figure2 <- readRDS(
-  here::here("erika/output/figure2.rds"))
-print(figure2)
+```{r, barchart}
+knitr::include_graphics(
+  here::here("erika/output/oedema_barchart.png"))
+```
 ```
 
 ```{r, regression}
