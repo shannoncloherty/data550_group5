@@ -26,53 +26,49 @@ var_label(projectdata) <- list(
   muac2 = "MUAC (cms) at discharge/death/widthdrawl",
   arm = "Formula type"
 )
-
-
-
 ```
 
-```{r, table1}
+```{r, table1, echo = FALSE}
 table1 <- readRDS(
-  here::here("alex/output/table_one.rds"))
+  here::here("alex/output/01_table1.rds"))
 print(table1)
 ```
 
-```{r, boxplots}
+```{r, boxplots, echo = FALSE}
 knitr::include_graphics(
-  here::here("erika/output/muac_boxplot.png"))
+  here::here("erika/output/02_muac_boxplot.png"))
 
 knitr::include_graphics(
-  here::here("erika/output/height_boxplot.png"))
+  here::here("erika/output/02_height_boxplot.png"))
 
 knitr::include_graphics(
-  here::here("erika/output/weight_boxplot.png"))
+  here::here("erika/output/02_weight_boxplot.png"))
 ```
 
-```{r, barchart}
+```{r, barchart, echo = FALSE}
 knitr::include_graphics(
-  here::here("erika/output/oedema_barchart.png"))
-```
+  here::here("erika/output/03_oedema_barchart.png"))
 ```
 
-```{r, regression}
+```{r, regression, echo = FALSE}
 knitr::include_graphics(
-  here::here("tina/output/reg_plot1.png"))
+  here::here("tina/output/04_reg_plot1.png"))
   
 knitr::include_graphics(
-  here::here("tina/output/reg_plot2.png"))
+  here::here("tina/output/05_reg_plot2.png"))
 ```
 
-```{r, figure3}
+```{r, figure3, echo = FALSE}
 figure3 <- readRDS(
-  here::here("afia/output/graph1.rds"))
+  here::here("afia/output/07_bf_graph.rds"))
 print(figure3)
 
 figure4 <- readRDS(
-  here::here("afia/output/graph2.rds"))
+  here::here("afia/output/09_treatment_graph.rds"))
 print(figure4)
 ```
 
-``` {r, params_figure}
+```{r, params_figure, echo = FALSE}
 
 projectdata <- projectdata %>% 
 mutate(newvardata = case_when(projectdata[[params$var_name]] < params$var_cutoff ~ "Less than cutoff",

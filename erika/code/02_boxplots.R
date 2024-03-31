@@ -1,4 +1,4 @@
-here::i_am("erika/code/02_make_figure1.R")
+here::i_am("erika/code/02_boxplots.R")
 
 library(ggplot2)
 library(tidyr)
@@ -34,7 +34,7 @@ p <- ggplot(muac_data_filtered, aes(x = period_arm, y = muac, fill = arm)) +
 
 # Save the plot as a PNG file
 ggsave(
-  here::here("erika/output/muac_boxplot.png"), 
+  here::here("erika/output/02_muac_boxplot.png"), 
   plot = p,
   device = "png",
   width = 6,
@@ -68,7 +68,7 @@ p <- ggplot(weight_data_filtered, aes(x = period_arm, y = weight, fill = arm)) +
 
 # Save the plot as a PNG file
 ggsave(
-  here::here("erika/output/weight_boxplot.png"), 
+  here::here("erika/output/02_weight_boxplot.png"), 
   plot = p,
   device = "png",
   width = 6,
@@ -101,7 +101,7 @@ p <- ggplot(height_data_filtered, aes(x = period_arm, y = height, fill = arm)) +
 
 # Save the plot as a PNG file
 ggsave(
-  here::here("erika/output/height_boxplot.png"), 
+  here::here("erika/output/02_height_boxplot.png"), 
   plot = p,
   device = "png",
   width = 6,

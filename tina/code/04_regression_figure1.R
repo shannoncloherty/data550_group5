@@ -20,3 +20,9 @@ reg_plot1 <- ggplot(df, aes(x = muac, y = weight)) +
   labs(x = "MUAC", y = "Weight") +  
   annotate("text", x = Inf, y = Inf, label = equation, hjust = 1.1, vjust = 2, size = 3.5) +
   theme_minimal()
+
+ggsave(
+  file = "tina/output/04_reg_plot1.png",
+  plot = reg_plot1,
+  device = "png"
+)

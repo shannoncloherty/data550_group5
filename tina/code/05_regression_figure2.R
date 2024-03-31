@@ -36,7 +36,7 @@ full_plot <- plot +
   annotate("text", x = Inf, y = Inf, label = text_group2, hjust = 1.1, vjust = 2, size = 3)
 
 ggsave(
-  file = "tina/output/reg_plot2.png",
+  file = "tina/output/05_reg_plot2.png",
   plot = full_plot,
   device = "png"
 )

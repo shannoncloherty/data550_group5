@@ -1,7 +1,7 @@
 
 #! TO DO:
 #!   add call to here::i_am
-here::i_am("alex/code/01_make_table1.R")
+here::i_am("alex/code/01_table1.R")
 
 data <- read.csv(
   file = here::here("data/f75_interim.csv")
@@ -38,5 +38,5 @@ table_one <- table1(~ site + agemons + sex + caregiver + bfeeding + shock + icon
 
 saveRDS(
   table_one,
-  file = here::here("alex/output/table_one.rds")
+  file = here::here("alex/output/01_table1.rds")
 )

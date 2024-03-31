@@ -1,7 +1,7 @@
 library(ggplot2)
 library(tidyr)
 
-here::i_am("erika/code/03_make_figure2.R")
+here::i_am("erika/code/03_barchart_oedema.R")
 
 
 absolute_path_to_f75_interim <- here::here
@@ -42,7 +42,7 @@ plot <- ggplot(plot_data, aes(x = oedema_level, y = frequency, fill = sex)) +
 
 # Save the plot
 ggsave(
-  here::here("erika/output/oedema_barchart.png"), 
+  here::here("erika/output/03_oedema_barchart.png"), 
   plot = plot,
   width = 6,
   height = 4,
