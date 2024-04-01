@@ -9,8 +9,13 @@ params:
 
 ```{r, here-i-am, include = FALSE}
 #loading packages
-library(pacman)
-p_load(tidyverse, ggplot2, knitr, labelled, gtsummary, haven, table1)
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+library(labelled)
+library(gtsummary)
+library(haven)
+library(table1)
 
 here::i_am("Report.Rmd")
 #reading in the data set
