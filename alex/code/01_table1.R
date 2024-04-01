@@ -33,10 +33,30 @@ var_label(data) <- list(
 )
 
 #Create a table one of the demographics
-table_one <- table1(~ site + agemons + sex + caregiver + bfeeding + shock + iconsciousness + sev_pneumonia + diarrhoea + malaria + ofillness + tb + chronic_cough +  sickle_cell + heart_disease + cerebral_palsy + hiv_results + kwash| arm, data=data, caption = "Table 1: Summary of Demographic Factors by Intervention", render.missing = NULL)
+table_one <- table1(~ site + 
+                      agemons + 
+                      sex + 
+                      caregiver + 
+                      bfeeding + 
+                      shock + 
+                      iconsciousness + 
+                      sev_pneumonia + 
+                      diarrhoea + 
+                      malaria + 
+                      ofillness + 
+                      tb + 
+                      chronic_cough +  
+                      sickle_cell + 
+                      heart_disease + 
+                      cerebral_palsy + 
+                      hiv_results + 
+                      kwash 
+                    | arm, 
+                    data=data, 
+                    caption = "Table 1: Summary of Demographic Factors by Intervention", 
+                    render.missing = NULL)
 
 
 saveRDS(
   table_one,
-  file = here::here("alex/output/01_table1.rds")
-)
+  file = here::here("alex/output/01_table1.rds"))
