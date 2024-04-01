@@ -30,5 +30,6 @@ afia_code_08:
 afia_code_09:
 	Rscript afia/code/09_treatment_graph.R
 
+.PHONY: clean
 clean:
 	rm -f alex/output/*.rds &&	rm -f erika/output/*.png &&	rm -f tina/output/*.png &&	rm -f afia/output/*.rds &&	rm -f report.html
