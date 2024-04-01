@@ -127,3 +127,5 @@ print(params_graph)
 ```
 
 The final graphs are based on the parameters defined at the start of the report. Using the two parameters: var_name and var_cutoff, the user can create a new boxplot comparing their variable of choice with the outcome variable, days to stabilization. The boxplot will then group values above and below the cutoff. The graph above compares the distribution of the days to stabilization with `r params$var_name` for those above and below `r params$var_cutoff`.
+
+The median for those greater than or equal to `r params$var_cutoff` is `r median(projectdata_greaterthan$days_stable)`. The median for those less than `r params$var_cutoff` is equal to `r median(projectdata_lessthan$days_stable)`.
