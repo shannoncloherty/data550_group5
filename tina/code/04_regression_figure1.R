@@ -9,6 +9,8 @@ df <-
 
 model <- lm(weight ~ muac, data = df)
 
+summary(model)
+
 intercept <- coef(model)[1]
 slope <- coef(model)[2]
 

@@ -77,7 +77,9 @@ knitr::include_graphics(
 knitr::include_graphics(
   here::here("tina/output/05_reg_plot2.png"))
 ```
+Mid-upper arm circumference(MUAC) is an important tool to diagnose malnutrition, which is directly reflected by the children weight. The first regression graph is to show the simple linear relation between the baseline MUAC and weight at the start of the report.
 
+The second regression graph is to show the change of linear relation between the MUAC and weight after the hospitalized severely malnourished children were randomized to receive standard formula (F75) or isocaloric modified F75 (mF75) without lactose and with reduced carbohydrate. 
 
 
 ```{r, figure3, echo = FALSE}

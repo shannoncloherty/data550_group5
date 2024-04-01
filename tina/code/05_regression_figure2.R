@@ -19,6 +19,9 @@ data_group2 <- subset(cleaned_df, arm == levels(cleaned_df$arm)[2])
 model_group1 <- lm(weight1 ~ muac1, data = data_group1)
 model_group2 <- lm(weight1 ~ muac1, data = data_group2)
 
+summary(model_group1)
+summary(model_group2)
+
 coef_group1 <- coef(model_group1)
 coef_group2 <- coef(model_group2)
 
