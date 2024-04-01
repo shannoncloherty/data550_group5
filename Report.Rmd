@@ -9,23 +9,17 @@ params:
 
 ```{r, here-i-am, include = FALSE}
 #loading packages
-library(pacman)
-p_load(tidyverse, ggplot2, knitr, labelled, gtsummary, haven, table1)
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+library(labelled)
+library(gtsummary)
+library(haven)
+library(table1)
 
 here::i_am("Report.Rmd")
 #reading in the data set
 projectdata <- read.csv(file = here::here("data/f75_interim.csv"))
-
-var_label(projectdata) <- list(
-  agemons = "Age (months)",
-  sex = "Sex assigned at birth",
-  caregiver = "Primary Caregiver",
-  bfeeding = "Current Breastfeeding Status",
-  muac = "MUAC (cms) at baseline",
-  muac1 = "MUAC (cms) at stabilization",
-  muac2 = "MUAC (cms) at discharge/death/widthdrawl",
-  arm = "Formula type"
-)
 ```
 
 # Introduction
@@ -36,8 +30,8 @@ These data are from a randomized trial that tested whether a milk formula called
 
 ```{r, table1, echo = FALSE}
 table1 <- readRDS(
-  here::here("alex/output/01_table1.rds"))
-print(table1)
+  file = here::here("alex/output/01_table1.rds"))
+table1
 ```
 
 Table 1 shows a summary of demographic factors by intervention arm and in total. These factors include age, sex, breastfeeding status, and presence of various illnesses and conditions.
@@ -92,7 +86,7 @@ The second regression graph is to show the change of linear relation between the
 
 ```{r, figure3, echo = FALSE}
 figure3 <- readRDS(
-  here::here("afia/output/07_bf_graph.rds"))
+  file = here::here("afia/output/07_bf_graph.rds"))
 print(figure3)
 ```
 
@@ -100,7 +94,7 @@ We were curious to see if there was a difference in days to stabilization by bre
 
 ```{r, figure4, echo = FALSE}
 figure4 <- readRDS(
-  here::here("afia/output/09_treatment_graph.rds"))
+  file = here::here("afia/output/09_treatment_graph.rds"))
 print(figure4)
 ```
 

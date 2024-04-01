@@ -12,8 +12,12 @@
 
 
 
-library(pacman)
-p_load(tidyverse, ggplot2, knitr, labelled, gtsummary)
+#loading packages
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+library(labelled)
+library(gtsummary)
 
 
 here::i_am("afia/code/06_breastfeeding_table.R")
