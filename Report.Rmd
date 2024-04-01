@@ -28,27 +28,47 @@ var_label(projectdata) <- list(
 )
 ```
 
+# Introduction
+
+These data are from a randomized trial that tested whether a milk formula called mF75 improved outcomes for children with severe malnutrition over a regularly used formula (Bandsma et al., 2019). mF75 is low-carbohydrate and lactose free. The authors' hypothesis was that a low-carb and lactose free formula may reduce instances of diarrhea, carbohydrate malabsorption, and refeeding syndrome. The primary outcome variable is the days to stabilization for children given both standard F75 and modified F75 (mF75). 843 severely malnourished children were enrolled between December 2014 and December 2015 in Kenya and Malawi.
+
 ```{r, table1, echo = FALSE}
 table1 <- readRDS(
   here::here("alex/output/01_table1.rds"))
 print(table1)
 ```
 
-```{r, boxplots, echo = FALSE}
+Table 1 shows a summary of demographic factors by intervention arm and in total. These factors include age, sex, breastfeeding status, and presence of various illnesses and conditions.
+
+```{r, muac boxplot, echo = FALSE}
 knitr::include_graphics(
   here::here("erika/output/02_muac_boxplot.png"))
+```
 
+Mid upper arm circumference (MUAC) is used as a criterion for severe acute malnutrition (SAM). MUAC of less than 11.5 cm is indicative of SAM. Here the distribution of MUAC measurements is shown for both the treatment and intervention arms at all three periods where MUAC was measured, baseline, stabilization, and endpoint.
+
+```{r, height boxplot, echo = FALSE}
 knitr::include_graphics(
   here::here("erika/output/02_height_boxplot.png"))
+```
 
+Height is used as a criterion for severe acute malnutrition (SAM) when combined with weight for weight-for-height Z score. Here the distribution of height measurements is shown for both the treatment and intervention arms at baseline and endpoint.
+
+
+```{r, weight boxplot, echo = FALSE}
 knitr::include_graphics(
   here::here("erika/output/02_weight_boxplot.png"))
 ```
+
+Weight is used as a criterion for severe acute malnutrition (SAM) when combined with height for weight-for-height Z score and BMI. Here the distribution of weight measurements is shown for both the treatment and intervention arms at baseline, stabilization, and endpoint.
+
 
 ```{r, barchart, echo = FALSE}
 knitr::include_graphics(
   here::here("erika/output/03_oedema_barchart.png"))
 ```
+
+Presence of oedema can be indicative of oedematous malnutrition. Presence of oedematous malnurition of any age was one of the inclusion criteria for this study. The figure shows the distribution of various levels of oedema, separated by sex of the participant. +++ indicates severe generalized bilateral pitting oedema, ++ indicates moderate oedema, and + indicates mild oedema present only on feet or ankles. The authors conducted analyses to determine if presence of oedema was an effect modifier and found no suggestion of modification.
 
 ```{r, regression, echo = FALSE}
 knitr::include_graphics(
@@ -58,15 +78,24 @@ knitr::include_graphics(
   here::here("tina/output/05_reg_plot2.png"))
 ```
 
+
+
 ```{r, figure3, echo = FALSE}
 figure3 <- readRDS(
   here::here("afia/output/07_bf_graph.rds"))
 print(figure3)
+```
 
+We were curious to see if there was a difference in days to stabilization by breastfeeding status. This figure shows the distribution in days to stabilization by breastfeeding status.
+
+```{r, figure4, echo = FALSE}
 figure4 <- readRDS(
   here::here("afia/output/09_treatment_graph.rds"))
 print(figure4)
 ```
+This figure represents the main goal of the study, determining if mF75 affects days to stabilization. The figure visually supports the conclusion of the authors, which was that there was no evidence for difference in time to stabilization (Brandsma et al., 2019).
+
+# Parameterized Report
 
 ```{r, params_figure, echo = FALSE}
 
