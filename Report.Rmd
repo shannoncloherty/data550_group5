@@ -32,6 +32,8 @@ var_label(projectdata) <- list(
 
 These data are from a randomized trial that tested whether a milk formula called mF75 improved outcomes for children with severe malnutrition over a regularly used formula (Bandsma et al., 2019). mF75 is low-carbohydrate and lactose free. The authors' hypothesis was that a low-carb and lactose free formula may reduce instances of diarrhea, carbohydrate malabsorption, and refeeding syndrome. The primary outcome variable is the days to stabilization for children given both standard F75 and modified F75 (mF75). 843 severely malnourished children were enrolled between December 2014 and December 2015 in Kenya and Malawi.
 
+# Summary Statistics
+
 ```{r, table1, echo = FALSE}
 table1 <- readRDS(
   here::here("alex/output/01_table1.rds"))
@@ -70,17 +72,23 @@ knitr::include_graphics(
 
 Presence of oedema can be indicative of oedematous malnutrition. Presence of oedematous malnurition of any age was one of the inclusion criteria for this study. The figure shows the distribution of various levels of oedema, separated by sex of the participant. +++ indicates severe generalized bilateral pitting oedema, ++ indicates moderate oedema, and + indicates mild oedema present only on feet or ankles. The authors conducted analyses to determine if presence of oedema was an effect modifier and found no suggestion of modification.
 
-```{r, regression, echo = FALSE}
+# Linear Regression
+
+```{r, regression 1, echo = FALSE}
 knitr::include_graphics(
   here::here("tina/output/04_reg_plot1.png"))
+```
+
+Mid-upper arm circumference(MUAC) is an important tool to diagnose malnutrition, which is directly reflected by the children weight. The first regression graph is to show the simple linear relation between the baseline MUAC and weight at the start of the report.
   
+```{r, regression 2, echo = FALSE}
 knitr::include_graphics(
   here::here("tina/output/05_reg_plot2.png"))
 ```
-Mid-upper arm circumference(MUAC) is an important tool to diagnose malnutrition, which is directly reflected by the children weight. The first regression graph is to show the simple linear relation between the baseline MUAC and weight at the start of the report.
 
 The second regression graph is to show the change of linear relation between the MUAC and weight after the hospitalized severely malnourished children were randomized to receive standard formula (F75) or isocaloric modified F75 (mF75) without lactose and with reduced carbohydrate. 
 
+# Days to Stabilization
 
 ```{r, figure3, echo = FALSE}
 figure3 <- readRDS(
@@ -95,9 +103,10 @@ figure4 <- readRDS(
   here::here("afia/output/09_treatment_graph.rds"))
 print(figure4)
 ```
+
 This figure represents the main goal of the study, determining if mF75 affects days to stabilization. The figure visually supports the conclusion of the authors, which was that there was no evidence for difference in time to stabilization (Brandsma et al., 2019).
 
-# Parameterized Report
+# Parameterized Figures
 
 ```{r, params_figure, echo = FALSE}
 
@@ -117,3 +126,6 @@ params_graph
 print(params_graph)
 ```
 
+The final graphs are based on the parameters defined at the start of the report. Using the two parameters: var_name and var_cutoff, the user can create a new boxplot comparing their variable of choice with the outcome variable, days to stabilization. The boxplot will then group values above and below the cutoff. The graph above compares the distribution of the days to stabilization with `r params$var_name` for those above and below `r params$var_cutoff`.
+
+The median for those greater than or equal to `r params$var_cutoff` is `r median(projectdata_greaterthan$days_stable)`. The median for those less than `r params$var_cutoff` is equal to `r median(projectdata_lessthan$days_stable`.
