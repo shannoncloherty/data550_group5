@@ -44,6 +44,10 @@ Erika Canda, Shannon Cloherty, Alex Klimek, Tina Teng, Afia Tyus
 `afia/code/09_treatment_graph.R`
   - creates a side by side boxplot of days to stabilization by treatment arm
   - saves the figure as a `.rds` object in `afia/output/`
+  
+## Building the Report
+
+Users can open the `Makefile` and execute the command to `make report.html` to make the report.
 
 ------------------------------------------------------------------------
 

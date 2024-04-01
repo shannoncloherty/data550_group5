@@ -1,6 +1,4 @@
-all: alex_code_01 erika_code_02 erika_code_03 tina_code_04 tina_code_05 afia_code_06 afia_code_07 afia_code_08 afia_code_09 report.html
 
-report.html: Report.Rmd
 	Rscript render_report.R
 
 alex_code_01:
