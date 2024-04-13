@@ -31,3 +31,7 @@ afia_code_09:
 .PHONY: clean
 clean:
 	rm -f alex/output/*.rds &&	rm -f erika/output/*.png &&	rm -f tina/output/*.png &&	rm -f afia/output/*.rds &&	rm -f report.html
+	
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"

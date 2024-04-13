@@ -49,5 +49,9 @@ Erika Canda, Shannon Cloherty, Alex Klimek, Tina Teng, Afia Tyus
 
 Users can open the `Makefile` and execute the command to `make report.html` to make the report.
 
+## Package Synchronization
+
+Users can open the `Makefile` and execute the command to `make install` to restore packages based on this repository's renv.
+
 ------------------------------------------------------------------------
 
